@@ -1,0 +1,204 @@
+-- Create Database
+CREATE DATABASE SchoolManagement;
+USE SchoolManagement;
+
+-- Create Table: Teacher
+CREATE TABLE Teacher (
+    TeacherID INT PRIMARY KEY AUTO_INCREMENT,
+    FirstName VARCHAR(50),
+    LastName VARCHAR(50),
+    Email VARCHAR(100) UNIQUE,
+    PhoneNumber VARCHAR(15),
+    HireDate DATE,
+    Department VARCHAR(50)
+);
+
+-- Create Table: Student
+CREATE TABLE Student (
+    StudentID INT PRIMARY KEY AUTO_INCREMENT,
+    FirstName VARCHAR(50),
+    LastName VARCHAR(50),
+    DateOfBirth DATE,
+    Address VARCHAR(255),
+    PhoneNumber VARCHAR(15),
+    Email VARCHAR(100) UNIQUE,
+    EnrollmentDate DATE
+);
+
+-- Create Table: Course
+CREATE TABLE Course (
+    CourseID INT PRIMARY KEY AUTO_INCREMENT,
+    CourseName VARCHAR(100),
+    CourseDescription TEXT,
+    CourseCredits INT,
+    Department VARCHAR(50)
+);
+
+-- Create Table: Schedule
+CREATE TABLE Schedule (
+    ScheduleID INT PRIMARY KEY AUTO_INCREMENT,
+    DayOfWeek VARCHAR(20),
+    StartTime TIME,
+    EndTime TIME
+);
+
+-- Create Table: Exam
+CREATE TABLE Exam (
+    ExamID INT PRIMARY KEY AUTO_INCREMENT,
+    ExamDate DATE,
+    TotalMarks INT,
+    ExamType VARCHAR(50),
+    RoomNumber VARCHAR(20),
+    Duration TIME
+);
+
+-- Create Table: Grade
+CREATE TABLE Grade (
+    GradeID INT PRIMARY KEY AUTO_INCREMENT,
+    GradeValue CHAR(2),
+    Comments TEXT,
+    DateAssigned DATE
+);
+
+-- Create Table: Event
+CREATE TABLE Event (
+    EventID INT PRIMARY KEY AUTO_INCREMENT,
+    EventName VARCHAR(100),
+    Location VARCHAR(100),
+    Description TEXT,
+    Organizer VARCHAR(50),
+    EventDate DATE
+);
+
+-- Create Table: Attendance
+CREATE TABLE Attendance (
+    AttendanceID INT PRIMARY KEY AUTO_INCREMENT,
+    Date DATE,
+    Status VARCHAR(20),
+    Remarks TEXT
+);
+
+-- Create Table: LibraryBook
+CREATE TABLE LibraryBook (
+    BookID INT PRIMARY KEY AUTO_INCREMENT,
+    Title VARCHAR(200),
+    Author VARCHAR(100),
+    ISBN VARCHAR(20),
+    PublishedYear YEAR,
+    Status VARCHAR(20)
+);
+
+-- Relationships
+-- "Schedules": Teacher schedules courses
+CREATE TABLE TeacherSchedule (
+    TeacherID INT,
+    ScheduleID INT,
+    PRIMARY KEY (TeacherID, ScheduleID),
+    FOREIGN KEY (TeacherID) REFERENCES Teacher(TeacherID),
+    FOREIGN KEY (ScheduleID) REFERENCES Schedule(ScheduleID),
+    INDEX idx_teacher_schedule_teacher (TeacherID),
+    INDEX idx_teacher_schedule_schedule (ScheduleID)
+);
+
+-- "Has Exam": Course has an exam
+CREATE TABLE CourseExam (
+    CourseID INT,
+    ExamID INT,
+    PRIMARY KEY (CourseID, ExamID),
+    FOREIGN KEY (CourseID) REFERENCES Course(CourseID),
+    FOREIGN KEY (ExamID) REFERENCES Exam(ExamID),
+    INDEX idx_course_exam_course (CourseID),
+    INDEX idx_course_exam_exam (ExamID)
+);
+
+-- "Takes": Student takes a course
+CREATE TABLE StudentCourse (
+    StudentID INT,
+    CourseID INT,
+    PRIMARY KEY (StudentID, CourseID),
+    FOREIGN KEY (StudentID) REFERENCES Student(StudentID),
+    FOREIGN KEY (CourseID) REFERENCES Course(CourseID),
+    INDEX idx_student_course_student (StudentID),
+    INDEX idx_student_course_course (CourseID)
+);
+
+-- "Receives": Student receives a grade
+CREATE TABLE StudentGrade (
+    StudentID INT,
+    GradeID INT,
+    PRIMARY KEY (StudentID, GradeID),
+    FOREIGN KEY (StudentID) REFERENCES Student(StudentID),
+    FOREIGN KEY (GradeID) REFERENCES Grade(GradeID),
+    INDEX idx_student_grade_student (StudentID),
+    INDEX idx_student_grade_grade (GradeID)
+);
+
+-- "Organizes": Teacher organizes an event
+CREATE TABLE TeacherEvent (
+    TeacherID INT,
+    EventID INT,
+    PRIMARY KEY (TeacherID, EventID),
+    FOREIGN KEY (TeacherID) REFERENCES Teacher(TeacherID),
+    FOREIGN KEY (EventID) REFERENCES Event(EventID),
+    INDEX idx_teacher_event_teacher (TeacherID),
+    INDEX idx_teacher_event_event (EventID)
+);
+
+-- "Attends": Student attends events
+CREATE TABLE StudentEvent (
+    StudentID INT,
+    EventID INT,
+    PRIMARY KEY (StudentID, EventID),
+    FOREIGN KEY (StudentID) REFERENCES Student(StudentID),
+    FOREIGN KEY (EventID) REFERENCES Event(EventID),
+    INDEX idx_student_event_student (StudentID),
+    INDEX idx_student_event_event (EventID)
+);
+
+-- "Is Held In": Exams are held in a specific room
+CREATE TABLE ExamRoom (
+    ExamID INT,
+    RoomNumber VARCHAR(20),
+    PRIMARY KEY (ExamID, RoomNumber),
+    FOREIGN KEY (ExamID) REFERENCES Exam(ExamID),
+    INDEX idx_exam_room_exam (ExamID)
+);
+
+-- "Borrows": Student borrows library books
+CREATE TABLE BorrowBook (
+    StudentID INT,
+    BookID INT,
+    PRIMARY KEY (StudentID, BookID),
+    FOREIGN KEY (StudentID) REFERENCES Student(StudentID),
+    FOREIGN KEY (BookID) REFERENCES LibraryBook(BookID),
+    INDEX idx_borrow_book_student (StudentID),
+    INDEX idx_borrow_book_book (BookID)
+);
+
+-- "Lectures": Teacher gives lectures for courses
+CREATE TABLE TeacherCourse (
+    TeacherID INT,
+    CourseID INT,
+    PRIMARY KEY (TeacherID, CourseID),
+    FOREIGN KEY (TeacherID) REFERENCES Teacher(TeacherID),
+    FOREIGN KEY (CourseID) REFERENCES Course(CourseID),
+    INDEX idx_teacher_course_teacher (TeacherID),
+    INDEX idx_teacher_course_course (CourseID)
+);
+
+-- "Attendance": Student has attendance records for courses or events
+CREATE TABLE StudentAttendance (
+    AttendanceID INT PRIMARY KEY AUTO_INCREMENT,
+    StudentID INT,
+    CourseID INT NULL,  -- Nullable for event attendance
+    EventID INT NULL,   -- Nullable for course attendance
+    AttendanceDate DATE,
+    Status VARCHAR(20),
+    Remarks TEXT,
+    FOREIGN KEY (StudentID) REFERENCES Student(StudentID),
+    FOREIGN KEY (CourseID) REFERENCES Course(CourseID),
+    FOREIGN KEY (EventID) REFERENCES Event(EventID),
+    INDEX idx_student_attendance_student (StudentID),
+    INDEX idx_student_attendance_course (CourseID),
+    INDEX idx_student_attendance_event (EventID)
+);

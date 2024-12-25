@@ -1,0 +1,176 @@
+-- Insert 24 New Data into Teacher
+INSERT INTO Teacher (FirstName, LastName, Email, PhoneNumber, HireDate, Department)
+VALUES
+    ('Alice', 'Williams', 'alice.williams@example.com', '5551234561', '2020-05-01', 'Mathematics'),
+    ('Bob', 'Johnson', 'bob.johnson@example.com', '5552345672', '2019-06-10', 'Physics'),
+    ('Carol', 'Davis', 'carol.davis@example.com', '5553456783', '2018-07-20', 'Chemistry'),
+    ('David', 'Clark', 'david.clark@example.com', '5554567894', '2021-08-15', 'Biology'),
+    ('Eve', 'Walker', 'eve.walker@example.com', '5555678905', '2017-09-30', 'Engineering'),
+    ('Frank', 'Lopez', 'frank.lopez@example.com', '5556789016', '2023-01-05', 'Mathematics'),
+    ('Grace', 'Harris', 'grace.harris@example.com', '5557890127', '2022-02-14', 'Physics'),
+    ('Hank', 'Martinez', 'hank.martinez@example.com', '5558901238', '2016-03-25', 'Literature'),
+    ('Ivy', 'Robinson', 'ivy.robinson@example.com', '5559012349', '2015-04-18', 'Chemistry'),
+    ('Jack', 'Lewis', 'jack.lewis@example.com', '5550123450', '2014-05-22', 'Computer Science'),
+    ('Kim', 'Lee', 'kim.lee@example.com', '5551234560', '2013-06-05', 'Biology'),
+    ('Leo', 'Walker', 'leo.walker@example.com', '5552345671', '2021-07-11', 'Engineering'),
+    ('Mia', 'Scott', 'mia.scott@example.com', '5553456782', '2018-08-17', 'Mathematics'),
+    ('Nina', 'Adams', 'nina.adams@example.com', '5554567893', '2017-09-25', 'Physics'),
+    ('Owen', 'Campbell', 'owen.campbell@example.com', '5555678904', '2016-10-13', 'Chemistry'),
+    ('Paul', 'Mitchell', 'paul.mitchell@example.com', '5556789015', '2015-11-20', 'Biology'),
+    ('Quinn', 'Perez', 'quinn.perez@example.com', '5557890126', '2019-12-08', 'Engineering'),
+    ('Ruby', 'Hughes', 'ruby.hughes@example.com', '5558901237', '2020-01-19', 'Literature'),
+    ('Sam', 'Morris', 'sam.morris@example.com', '5559012348', '2021-02-27', 'Computer Science'),
+    ('Tina', 'Foster', 'tina.foster@example.com', '5550123459', '2023-03-09', 'Mathematics'),
+    ('Uma', 'Sanders', 'uma.sanders@example.com', '5551234568', '2022-04-16', 'Physics'),
+    ('Victor', 'Ramirez', 'victor.ramirez@example.com', '5552345679', '2019-05-21', 'Chemistry'),
+    ('Wendy', 'Carter', 'wendy.carter@example.com', '5553456780', '2018-06-18', 'Biology'),
+    ('Xavier', 'Nelson', 'xavier.nelson@example.com', '5554567891', '2020-07-24', 'Engineering');
+
+-- Insert 21 New Data into Student
+INSERT INTO Student (FirstName, LastName, DateOfBirth, Address, PhoneNumber, Email, EnrollmentDate)
+VALUES
+    ('Aaron', 'Carter', '2000-01-01', '101 Apple St', '5559876541', 'aaron.carter@example.com', '2022-08-15'),
+    ('Bella', 'Rodriguez', '2001-02-10', '102 Orange St', '5558765432', 'bella.rodriguez@example.com', '2021-09-20'),
+    ('Caleb', 'Parker', '1999-03-15', '103 Pear St', '5557654323', 'caleb.parker@example.com', '2020-07-01'),
+    ('Diana', 'Bailey', '2002-04-25', '104 Cherry St', '5556543214', 'diana.bailey@example.com', '2023-01-10'),
+    ('Elijah', 'Collins', '1998-05-12', '105 Plum St', '5555432105', 'elijah.collins@example.com', '2019-09-30'),
+    ('Fiona', 'Brooks', '2001-06-17', '106 Peach St', '5554321096', 'fiona.brooks@example.com', '2021-03-15'),
+    ('George', 'Murphy', '2000-07-20', '107 Pine St', '5553210987', 'george.murphy@example.com', '2020-08-22'),
+    ('Hannah', 'Price', '1999-08-05', '108 Walnut St', '5552109878', 'hannah.price@example.com', '2019-07-25'),
+    ('Isaac', 'Gray', '2002-09-14', '109 Maple St', '5551098769', 'isaac.gray@example.com', '2023-02-14'),
+    ('Julia', 'Reed', '2001-10-03', '110 Oak St', '5550987650', 'julia.reed@example.com', '2022-09-15'),
+    ('Kevin', 'Jenkins', '2000-11-18', '111 Elm St', '5559876542', 'kevin.jenkins@example.com', '2020-01-12'),
+    ('Luna', 'Watson', '2002-12-27', '112 Spruce St', '5558765433', 'luna.watson@example.com', '2023-01-18'),
+    ('Mason', 'Sanders', '2000-03-22', '113 Cedar St', '5557654324', 'mason.sanders@example.com', '2020-08-08'),
+    ('Nora', 'Foster', '1999-01-10', '114 Willow St', '5556543215', 'nora.foster@example.com', '2019-07-10'),
+    ('Owen', 'Powell', '2001-02-14', '115 Birch St', '5555432106', 'owen.powell@example.com', '2021-03-20'),
+    ('Paige', 'Cruz', '1998-04-25', '116 Ash St', '5554321097', 'paige.cruz@example.com', '2018-09-01'),
+    ('Quincy', 'Morgan', '2000-06-17', '117 Redwood St', '5553210988', 'quincy.morgan@example.com', '2022-06-10'),
+    ('Ruby', 'Hayes', '2001-08-30', '118 Sycamore St', '5552109879', 'ruby.hayes@example.com', '2021-01-15'),
+    ('Sean', 'Cunningham', '1999-10-20', '119 Poplar St', '5551098760', 'sean.cunningham@example.com', '2019-09-01'),
+    ('Tina', 'Mendoza', '2002-11-05', '120 Chestnut St', '5550987651', 'tina.mendoza@example.com', '2023-03-01'),
+    ('Victor', 'Knight', '2000-12-19', '121 Fir St', '5559876543', 'victor.knight@example.com', '2020-05-25');
+
+-- Insert 12 New Data into Course
+INSERT INTO Course (CourseName, CourseDescription, CourseCredits, Department)
+VALUES
+    ('Introduction to Algebra', 'Basic concepts in algebra, including equations and inequalities.', 3, 'Mathematics'),
+    ('General Physics', 'An overview of classical mechanics, thermodynamics, and electromagnetism.', 4, 'Physics'),
+    ('Organic Chemistry', 'Fundamentals of organic molecules and reactions.', 3, 'Chemistry'),
+    ('Human Anatomy', 'A study of the human body and its systems.', 4, 'Biology'),
+    ('Data Structures', 'Introduction to data structures such as arrays, lists, stacks, and queues.', 3, 'Computer Science'),
+    ('Engineering Dynamics', 'Study of forces and motion in mechanical systems.', 4, 'Engineering'),
+    ('World History', 'A survey of major historical events and eras across the globe.', 3, 'History'),
+    ('Shakespearean Literature', 'An in-depth study of the works of Shakespeare and their impact.', 3, 'Literature'),
+    ('Advanced Calculus', 'Differential and integral calculus in multiple dimensions.', 4, 'Mathematics'),
+    ('Quantum Mechanics', 'An introduction to the principles of quantum mechanics.', 3, 'Physics'),
+    ('Environmental Chemistry', 'Chemistry of environmental systems, pollution, and mitigation.', 4, 'Chemistry'),
+    ('Molecular Biology', 'Exploration of DNA, RNA, and protein synthesis.', 3, 'Biology');
+
+-- Insert 12 New Data into Schedule
+INSERT INTO Schedule (DayOfWeek, StartTime, EndTime)
+VALUES
+    ('Monday', '09:00:00', '11:00:00'),
+    ('Tuesday', '10:00:00', '12:00:00'),
+    ('Wednesday', '13:00:00', '15:00:00'),
+    ('Thursday', '08:00:00', '10:00:00'),
+    ('Friday', '14:00:00', '16:00:00'),
+    ('Monday', '11:00:00', '13:00:00'),
+    ('Tuesday', '15:00:00', '17:00:00'),
+    ('Wednesday', '09:00:00', '11:00:00'),
+    ('Thursday', '10:00:00', '12:00:00'),
+    ('Friday', '16:00:00', '18:00:00'),
+    ('Saturday', '08:30:00', '10:30:00'),
+    ('Sunday', '12:00:00', '14:00:00');
+
+-- Insert 20 New Data into Exam
+INSERT INTO Exam (ExamDate, TotalMarks, ExamType, RoomNumber, Duration)
+VALUES
+    ('2024-03-01', 100, 'Midterm', 'R101', '02:00:00'),
+    ('2024-03-15', 100, 'Final', 'R102', '03:00:00'),
+    ('2024-04-10', 50, 'Quiz', 'R201', '01:00:00'),
+    ('2024-04-25', 70, 'Assignment', 'R202', '01:30:00'),
+    ('2024-05-05', 80, 'Midterm', 'R103', '02:30:00'),
+    ('2024-05-20', 100, 'Final', 'R104', '03:00:00'),
+    ('2024-06-01', 30, 'Class Test', 'R301', '00:45:00'),
+    ('2024-06-15', 60, 'Project', 'R302', '01:45:00'),
+    ('2024-07-05', 50, 'Midterm', 'R401', '02:00:00'),
+    ('2024-07-20', 100, 'Final', 'R402', '03:00:00'),
+    ('2024-08-01', 20, 'Quiz', 'R501', '00:30:00'),
+    ('2024-08-10', 80, 'Assignment', 'R502', '01:30:00'),
+    ('2024-09-05', 75, 'Midterm', 'R601', '02:15:00'),
+    ('2024-09-20', 100, 'Final', 'R602', '03:00:00'),
+    ('2024-10-01', 40, 'Class Test', 'R701', '01:00:00'),
+    ('2024-10-15', 60, 'Project', 'R702', '01:30:00'),
+    ('2024-11-01', 90, 'Midterm', 'R801', '02:30:00'),
+    ('2024-11-20', 100, 'Final', 'R802', '03:00:00'),
+    ('2024-12-05', 25, 'Quiz', 'R901', '00:45:00'),
+    ('2024-12-15', 50, 'Assignment', 'R902', '01:00:00');
+
+-- Insert 21 New Data into Grade
+INSERT INTO Grade (GradeValue, Comments, DateAssigned)
+VALUES
+    ('A', 'Excellent performance.', '2024-03-01'),
+    ('B', 'Good effort.', '2024-03-05'),
+    ('C', 'Satisfactory performance.', '2024-03-10'),
+    ('D', 'Needs improvement.', '2024-03-15'),
+    ('F', 'Failed the exam.', '2024-03-20'),
+    ('A', 'Outstanding understanding of the material.', '2024-04-01'),
+    ('B', 'Above average work.', '2024-04-05'),
+    ('C', 'Met the basic requirements.', '2024-04-10'),
+    ('D', 'Struggled with the material.', '2024-04-15'),
+    ('F', 'Did not meet minimum requirements.', '2024-04-20'),
+    ('A', 'Demonstrated exceptional skills.', '2024-05-01'),
+    ('B', 'Well-done.', '2024-05-10'),
+    ('C', 'Satisfactory understanding.', '2024-05-15'),
+    ('D', 'Lacked critical skills.', '2024-05-20'),
+    ('F', 'Incomplete understanding.', '2024-05-25'),
+    ('A', 'Perfect score.', '2024-06-01'),
+    ('B', 'Strong performance.', '2024-06-10'),
+    ('C', 'Average results.', '2024-06-15'),
+    ('D', 'Below expectations.', '2024-06-20'),
+    ('F', 'Insufficient effort.', '2024-06-25'),
+    ('A', 'Exemplary work.', '2024-07-01');
+
+-- Insert 5 New Data into Event
+INSERT INTO Event (EventName, Location, Description, Organizer, EventDate)
+VALUES
+    ('Science Fair', 'Main Auditorium', 'An exhibition of science projects and experiments.', 'John Doe', '2024-03-15'),
+    ('Math Olympiad', 'Lecture Hall A', 'A competitive math event for advanced problem solvers.', 'Alice Williams', '2024-04-10'),
+    ('Coding Hackathon', 'Computer Lab 1', 'A 24-hour programming competition.', 'Mark Taylor', '2024-05-25'),
+    ('Literature Reading', 'Library Conference Room', 'A literary event featuring readings and discussions.', 'Sophia Moore', '2024-06-12'),
+    ('Physics Workshop', 'Engineering Workshop Room', 'A practical session on physics experiments.', 'Jane Smith', '2024-07-20');
+
+-- Insert 30 New Data into LibraryBook
+INSERT INTO LibraryBook (Title, Author, ISBN, PublishedYear, Status)
+VALUES
+    ('Introduction to Algorithms', 'Thomas H. Cormen', '978-0262033848', 2009, 'Available'),
+    ('The Art of Computer Programming', 'Donald E. Knuth', '978-0201896831', 2011, 'Borrowed'),
+    ('Clean Code', 'Robert C. Martin', '978-0132350884', 2008, 'Available'),
+    ('Design Patterns', 'Erich Gamma', '978-0201633610', 1994, 'Available'),
+    ('Artificial Intelligence: A Modern Approach', 'Stuart Russell', '978-0136042594', 2010, 'Borrowed'),
+    ('Data Science for Business', 'Foster Provost', '978-1449361327', 2013, 'Available'),
+    ('Python Crash Course', 'Eric Matthes', '978-1593279288', 2019, 'Borrowed'),
+    ('JavaScript: The Good Parts', 'Douglas Crockford', '978-0596517748', 2008, 'Available'),
+    ('The Pragmatic Programmer', 'Andy Hunt', '978-0201616224', 1999, 'Available'),
+    ('You Don’t Know JS', 'Kyle Simpson', '978-1491904244', 2015, 'Available'),
+    ('Introduction to Quantum Mechanics', 'David J. Griffiths', '978-1107189638', 2018, 'Borrowed'),
+    ('Linear Algebra Done Right', 'Sheldon Axler', '978-3319110790', 2015, 'Available'),
+    ('Chemistry: The Central Science', 'Theodore L. Brown', '978-0134414232', 2017, 'Borrowed'),
+    ('Biology', 'Neil A. Campbell', '978-0134093413', 2017, 'Available'),
+    ('Principles of Economics', 'N. Gregory Mankiw', '978-1305585126', 2017, 'Borrowed'),
+    ('World History', 'William J. Duiker', '978-0357026862', 2018, 'Available'),
+    ('Physics for Scientists and Engineers', 'Douglas C. Giancoli', '978-0321964670', 2015, 'Borrowed'),
+    ('Discrete Mathematics and Its Applications', 'Kenneth H. Rosen', '978-0073383095', 2018, 'Available'),
+    ('Operating System Concepts', 'Abraham Silberschatz', '978-1118063330', 2013, 'Borrowed'),
+    ('Database System Concepts', 'Abraham Silberschatz', '978-0078022159', 2010, 'Available'),
+    ('Introduction to Game Design', 'Jesse Schell', '978-1491927457', 2015, 'Borrowed'),
+    ('Computer Networking: A Top-Down Approach', 'James F. Kurose', '978-0133594140', 2017, 'Available'),
+    ('Deep Learning', 'Ian Goodfellow', '978-0262035613', 2016, 'Available'),
+    ('Principles of Neural Science', 'Eric R. Kandel', '978-0071390118', 2012, 'Borrowed'),
+    ('The Great Gatsby', 'F. Scott Fitzgerald', '978-0743273565', 1925, 'Available'),
+    ('To Kill a Mockingbird', 'Harper Lee', '978-0061120084', 1960, 'Borrowed'),
+    ('1984', 'George Orwell', '978-0451524935', 1949, 'Available'),
+    ('The Catcher in the Rye', 'J.D. Salinger', '978-0316769488', 1951, 'Available'),
+    ('Brave New World', 'Aldous Huxley', '978-0060850524', 1932, 'Available'),
+    ('Moby-Dick', 'Herman Melville', '978-1503280786', 1851, 'Borrowed');
